@@ -3,8 +3,8 @@
 本项目针对于A股市场，以深圳100指数中的股票为例，时间为2021-01-01至2024-12-31，级别为日线级别；
 
 1. 01_getdata.py文件是用于读取股票数据的（文件中是读取了上证50，但是csv文件中的数据是深圳100的股票数据）
-这里用的是akshare，实际上akshare并不好用；
-———股票数据包括了最基本的code、name、open、high、low、close、volume、amount
+
+这里用的是akshare，实际上akshare并不好用；股票数据包括了最基本的code、name、open、high、low、close、volume、amount
 
 
 
