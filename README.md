@@ -1,6 +1,4 @@
-# MyQuant_Learning_Process
-Record my process of QuantTrade 
-借助Gemini，完成我第一个有关与因子挖掘方面的量化开发项目
+本项目借助Gemini，完成我第一个有关与因子挖掘方面的量化开发项目
 
 本项目针对于A股市场，以深圳100指数中的股票为例，时间为2021-01-01至2024-12-31，级别为日线级别；
 
