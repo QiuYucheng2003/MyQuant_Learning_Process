@@ -15,8 +15,11 @@
 
 整体步骤：
 ***读取sz100.csv文件作为数据输入（dataframe）
+
 ***构建传统的因子库（动量momentum、Bias、Volatility、ATR、Volume等等）
+
 ***GP_Dig_Factor构建GP（Genetic Programming ）挖掘
+
 ***预处理工程（将GP挖掘出来的因子进行进一步处理）
 
 特别注意
