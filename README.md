@@ -1,2 +1,29 @@
 # MyQuant_Learning_Process
 Record my process of QuantTrade 
+借助Gemini，完成我第一个有关与因子挖掘方面的量化开发项目
+
+本项目针对于A股市场，以深圳100指数中的股票为例，时间为2021-01-01至2024-12-31，级别为日线级别；
+
+1. 01_getdata.py文件是用于读取股票数据的（文件中是读取了上证50，但是csv文件中的数据是深圳100的股票数据）
+这里用的是akshare，实际上akshare并不好用；
+———股票数据包括了最基本的code、name、open、high、low、close、volume、amount
+
+
+
+
+3. 02_GP_DigNewFactor.py是用于因子挖掘的（****重要****）
+   
+原理说明：遗传规划算法就是通过输入的因子（这里就是我们构建的传统因子库的各个因子）作为特征X，然后通过算子（加减乘除等等），将这些因子组合在一起，去逼近Label（这里就是RET_FWD_5_RANK），然后选出表现最好的5个因子（这里的因子是GP挖掘出来的）
+
+整体步骤：
+***读取sz100.csv文件作为数据输入（dataframe）
+***构建传统的因子库（动量momentum、Bias、Volatility、ATR、Volume等等）
+***GP_Dig_Factor构建GP（Genetic Programming ）挖掘
+***预处理工程（将GP挖掘出来的因子进行进一步处理）
+
+特别注意
+———以5日收益率排名（RET_FWD_5_RANK）作为Label，以此来寻找与之最相关的因子
+———在构建传统因子库的时候，我们不能以价格、成交量等等原始数值作为特征X，特征X就是让SymbolicTransformer学习，然后拟合出因子（就是公式）去逼近Label的。因此，在构建特征库的时候，要进行去量纲操作，以比率等作为特征X列！
+———在进行GP挖掘函数编写的时候，我们要以时间为序列，划分70%，然后对传统因子进行清洗，去掉nan和inf，将自定义的算子和传统算子合并放入SymbolicTransformer，然后开始训练
+
+过程中遇到的问题以及解决方案：
