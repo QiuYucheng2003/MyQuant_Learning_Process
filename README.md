@@ -38,3 +38,8 @@
 2. 在构建传统的因子库的时候，要记得处理量纲，切记不能用股票的价格去作为因子，因为股价之间相差的太大！我们应当使用比率等因子，避开价格、量能的绝对值形成的因子
 
 3. 如何挖掘出好的因子？降低因子间的相关性？可以通过调整SymbolicTransformer的相关参数：tournament_size的值需要降低【推荐是3-5】、大幅降低p_crossover（杂交）、大幅提高各种mutation的概率、降低max_samples推荐0.7、population_size增加【暴力出奇迹】
+
+
+
+3. 03_Factor_optimization.py是用于因子优化的
+
